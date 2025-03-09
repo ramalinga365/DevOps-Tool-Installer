@@ -1,142 +1,142 @@
-# DevOps Tool Installer/Uninstaller 🚀
+# 🚀 DevOps Tool Installer & Uninstaller  
 
-![text](https://imgur.com/tP5o7Eu.png)
+![DevOps Tool Installer](https://imgur.com/QLlNazj.png)  
 
-**This repository provides scripts to install/uninstall a wide range of DevOps tools on both Linux and Windows operating systems. These scripts are designed to make the installation and uninstallation process seamless and straightforward, catering to the needs of DevOps engineers and enthusiasts.**
+Easily **install and uninstall essential DevOps tools** on **Linux & Windows** with a single script! Whether you're a **DevOps Engineer, Cloud Enthusiast, or System Administrator**, this script automates the tool setup process, saving time and effort.  
 
-## Features
+---
 
-- **User-Friendly Interface**: Interactive terminal menus for selecting installation or uninstallation actions on Windows.
-- **Multi-OS Detection**: Automatically detects your Linux distribution or Windows version and performs appropriate actions.
-- **Multi-Platform Support**: Install and uninstall DevOps tools on multiple Linux distributions (Ubuntu/Debian, CentOS/RHEL, Fedora) and Windows.
-  - Install and uninstall essential DevOps tools with a single script.
-  - Support for multiple Linux distributions: Ubuntu/Debian, CentOS/RHEL, Fedora.
-  - Support for Windows operating systems.
-  - Choose which tools to install or uninstall from a list of available options.
-  - **New Features**:
-    - Enhanced support for different Linux distributions and Windows versions.
-    - Users can select their OS before installing or uninstalling tools, streamlining the process.
+## 🔥 Why Use This?  
 
-## DevOps Tools Included
+✅ **One-Click Installation** – Set up all required DevOps tools effortlessly.  
+✅ **Multi-OS Support** – Works on **Ubuntu, Debian, CentOS, Fedora & Windows**.  
+✅ **Auto-Detection** – Automatically detects your OS and applies the correct setup.  
+✅ **Interactive Menu** – Windows version provides an easy-to-use selection menu.  
+✅ **Bulk Install & Uninstall** – Manage multiple tools in one go.  
+✅ **Always Up-to-Date** – Installs the latest versions of all tools.  
 
-- **Comprehensive Toolset**: Support for a wide range of tools including:
-  - Docker 🐳
-  - Kubernetes (kubectl) ☸️
-  - Ansible 📜
-  - Terraform 🌍
-  - Jenkins 🏗️
-  - AWS CLI ☁️
-  - Azure CLI ☁️
-  - Google Cloud SDK ☁️
-  - Helm ⛵
-  - Prometheus 📈
-  - Grafana 📊
-  - GitLab Runner 🏃‍♂️
-  - HashiCorp Vault 🔐
-  - HashiCorp Consul 🌐
-  - Minikube ☸️
-  - Istio 📦
-  - OpenShift CLI ☸️
-  - Packer 📦
-  - Vagrant 📦
+---
 
-## Tool Preview
+## 📌 Supported DevOps Tools  
 
-![text](https://imgur.com/kkUnTrk.png)
+This installer includes a **wide range of must-have DevOps tools**, including:  
 
-## Usage
+🔹 **Containerization & Orchestration**  
+✔️ Docker 🐳  
+✔️ Kubernetes (kubectl) ☸️  
+✔️ Helm ⛵  
+✔️ Minikube ☸️  
+✔️ Istio 📦  
+✔️ OpenShift CLI ☸️  
 
-After running the script, follow the on-screen prompts to select the tools you want to install or uninstall. The script will handle the rest based on your operating system and version.
+🔹 **Infrastructure as Code & Automation**  
+✔️ Ansible 📜  
+✔️ Terraform 🌍  
+✔️ Packer 📦  
+✔️ Vagrant 📦  
 
-### Linux Specific
+🔹 **CI/CD & Monitoring**  
+✔️ Jenkins 🏗️  
+✔️ GitLab Runner 🏃‍♂️  
+✔️ Prometheus 📈  
+✔️ Grafana 📊  
 
-- **Ubuntu/Debian**: Installs tools using `apt` package manager.
-- **CentOS/RHEL**: Installs tools using `yum` package manager.
-- **Fedora**: Installs tools using `dnf` package manager.
+🔹 **Cloud & Security**  
+✔️ AWS CLI ☁️  
+✔️ Azure CLI ☁️  
+✔️ Google Cloud SDK ☁️  
+✔️ HashiCorp Vault 🔐  
+✔️ HashiCorp Consul 🌐  
 
-### Windows Specific
+---
 
-- **Chocolatey**: Utilizes `Chocolatey` package manager for installation and uninstallation of tools.
+## 🛠️ Installation Guide  
 
-## Installation Options
+There are **two ways** to install and use this tool:  
 
-You can install and run the DevOps Tool Installer in two ways: without cloning the repository or by cloning the repository. Choose the method that suits your needs.
+### 🚀 **Method 1: Quick Install (Without Cloning)**  
 
-### Method 1: Run the Installer Without Cloning the Repository
-
-#### For Windows (PowerShell)
-
-You can run the DevOps Tool Installer on your Windows machine directly with this one-liner:
-
+#### 📌 **For Windows (PowerShell):**  
+Run the following command in **PowerShell**:  
 ```powershell
 Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/install_devops_tools.ps1')
-```
+```  
 
-#### For Linux (Bash)
-
-You can run the DevOps Tool Installer on your Linux machine directly with this one-liner:
-
+#### 📌 **For Linux (Bash):**  
+Run the following command in **Terminal**:  
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/install_devops_tools.sh)
-```
+```  
 
-### Method 2: Clone the Repository and Run the Installer
+---
 
-#### For Linux
+### 🖥️ **Method 2: Install via Cloning the Repository**  
 
-1. Clone the repository:
+#### 📌 **For Linux Users:**  
+1️⃣ Clone the repository:  
+```bash
+git clone https://github.com/NotHarshhaa/DevOps-Tool-Installer.git  
+cd DevOps-Tool-Installer  
+```  
+2️⃣ Make the script executable:  
+```bash
+chmod +x install_devops_tools.sh  
+```  
+3️⃣ Run the script:  
+```bash
+./install_devops_tools.sh  
+```  
 
-    ```bash
-    git clone https://github.com/NotHarshhaa/DevOps-Tool-Installer.git
-    cd DevOps-Tool-Installer
-    ```
+#### 📌 **For Windows Users:**  
+1️⃣ Clone the repository:  
+```powershell
+git clone https://github.com/NotHarshhaa/DevOps-Tool-Installer.git  
+cd DevOps-Tool-Installer  
+```  
+2️⃣ Run the script:  
+```powershell
+.\install_devops_tools.ps1  
+```  
 
-2. Make the script executable:
+---
 
-    ```bash
-    chmod +x install_devops_tools.sh
-    ```
+## 📝 How It Works  
 
-3. Run the script:
+1️⃣ **Run the script** (either via Quick Install or Cloning method).  
+2️⃣ **Follow the on-screen prompts** to select tools for installation or uninstallation.  
+3️⃣ **The script will automatically install/uninstall** based on your OS.  
 
-    ```bash
-    ./install_devops_tools.sh
-    ```
+### 🔹 **Installation Process by OS**  
+- **Ubuntu/Debian** → Uses `apt` package manager  
+- **CentOS/RHEL** → Uses `yum` package manager  
+- **Fedora** → Uses `dnf` package manager  
+- **Windows** → Uses `Chocolatey` package manager  
 
-#### For Windows
+---
 
-1. Clone the repository:
+## 🤝 Contribution  
 
-    ```powershell
-    git clone https://github.com/NotHarshhaa/DevOps-Tool-Installer.git
-    cd DevOps-Tool-Installer
-    ```
+🚀 Want to improve this script? Contributions are **welcome!**  
 
-2. Run the script:
+🔹 **Report Issues** – Found a bug? Open an issue!  
+🔹 **Suggest Features** – Have ideas? Let’s make this better together!  
+🔹 **Submit PRs** – Fix bugs or enhance features by submitting a Pull Request.  
 
-    ```powershell
-    .\install_devops_tools.ps1
-    ```
+---
 
-## Contribution
+## 🔗 Join the Community  
 
-Feel free to contribute to this repository by submitting a pull request or opening an issue with suggestions or bug reports. Let's make this repository a go-to resource for DevOps tool installations!
+🔥 **Stay connected & collaborate with DevOps professionals!**  
 
-## License
+📢 **Telegram:** [Join our community](https://t.me/prodevopsguy)  
+⭐ **GitHub:** [Follow me](https://github.com/NotHarshhaa)  
+📖 **Blog:** [ProDevOpsGuy](https://blog.prodevopsguy.xyz)  
+💼 **LinkedIn:** [Harshhaa Vardhan Reddy](https://www.linkedin.com/in/harshhaa-vardhan-reddy/)  
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+---
 
-## Author
+## ⭐ Show Your Support  
 
-Developed by [H A R S H H A A](https://github.com/NotHarshhaa).
+🚀 **If this project helps you, please give it a STAR on GitHub!** ⭐  
 
-## Contact
-
-![Author Image](https://imgur.com/2j6Aoyl.png)
-
-> [!NOTE]
-> Join our [Telegram Community](https://t.me/prodevopsguy) for discussions and updates. Follow [ProDevOpsGuy](https://github.com/NotHarshhaa) for more DevOps content.
-
-## Hit the Star! ⭐
-
-**If you find this repository useful, please give it a star. Thanks!**
+![Follow Me](https://imgur.com/2j7GSPs.png)  
