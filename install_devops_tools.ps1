@@ -10,25 +10,25 @@ Write-Host "Automate the installation and uninstallation of essential DevOps too
 Write-Host "Choose from a wide range of tools and get started quickly and easily."
 Write-Host ""
 Write-Host "Tools available for installation/uninstallation:"
-Write-Host "  - Docker 🐳"
-Write-Host "  - Kubernetes (kubectl) ☸️"
-Write-Host "  - Ansible 📜"
-Write-Host "  - Terraform 🌍"
-Write-Host "  - Jenkins 🏗️"
-Write-Host "  - AWS CLI ☁️"
-Write-Host "  - Azure CLI ☁️"
-Write-Host "  - Google Cloud SDK ☁️"
-Write-Host "  - Helm ⛵"
-Write-Host "  - Prometheus 📈"
-Write-Host "  - Grafana 📊"
-Write-Host "  - GitLab Runner 🏃‍♂️"
-Write-Host "  - HashiCorp Vault 🔐"
-Write-Host "  - HashiCorp Consul 🌐"
-Write-Host "  - Minikube ☸️"
-Write-Host "  - Istio 📦"
-Write-Host "  - OpenShift CLI ☸️"
-Write-Host "  - Packer 📦"
-Write-Host "  - Vagrant 📦"
+Write-Host "  - Docker"
+Write-Host "  - Kubernetes (kubectl)"
+Write-Host "  - Ansible"
+Write-Host "  - Terraform"
+Write-Host "  - Jenkins"
+Write-Host "  - AWS CLI"
+Write-Host "  - Azure CLI"
+Write-Host "  - Google Cloud SDK"
+Write-Host "  - Helm"
+Write-Host "  - Prometheus"
+Write-Host "  - Grafana"
+Write-Host "  - GitLab Runner (Runner)"
+Write-Host "  - HashiCorp Vault"
+Write-Host "  - HashiCorp Consul"
+Write-Host "  - Minikube"
+Write-Host "  - Istio"
+Write-Host "  - OpenShift CLI"
+Write-Host "  - Packer"
+Write-Host "  - Vagrant"
 Write-Host ""
 
 # Generic function to install tools using Chocolatey
@@ -67,12 +67,12 @@ function Main-Menu {
     Write-Host "3. Exit"
     $action_choice = Read-Host "Enter your choice"
 
-    if ($action_choice -eq 1 -or $action_choice -eq 2) {
+    if ($action_choice -eq "1" -or $action_choice -eq "2") {
         Write-Host "Select a tool:"
         $tools = @(
             "Docker", "Kubernetes (kubectl)", "Ansible", "Terraform", "Jenkins", 
             "AWS CLI", "Azure CLI", "Google Cloud SDK", "Helm", "Prometheus", 
-            "Grafana", "GitLab Runner", "HashiCorp Vault", "HashiCorp Consul", 
+            "Grafana", "GitLab Runner (Runner)", "HashiCorp Vault", "HashiCorp Consul", 
             "Minikube", "Istio", "OpenShift CLI", "Packer", "Vagrant"
         )
 
@@ -80,9 +80,10 @@ function Main-Menu {
             Write-Host "$($i + 1). $($tools[$i])"
         }
 
-        $tool_choice = [int](Read-Host "Enter the number corresponding to the tool")
-        if ($tool_choice -ge 1 -and $tool_choice -le $tools.Count) {
-            $selected_tool = $tools[$tool_choice - 1]
+        $tool_choice = Read-Host "Enter the number corresponding to the tool"
+
+        if ($tool_choice -match "^\d+$" -and [int]$tool_choice -ge 1 -and [int]$tool_choice -le $tools.Count) {
+            $selected_tool = $tools[[int]$tool_choice - 1]
 
             # Map tool names to Chocolatey package names
             $toolMap = @{
@@ -97,7 +98,7 @@ function Main-Menu {
                 "Helm" = "kubernetes-helm"
                 "Prometheus" = "prometheus"
                 "Grafana" = "grafana"
-                "GitLab Runner" = "gitlab-runner"
+                "GitLab Runner (Runner)" = "gitlab-runner"
                 "HashiCorp Vault" = "vault"
                 "HashiCorp Consul" = "consul"
                 "Minikube" = "minikube"
@@ -109,7 +110,7 @@ function Main-Menu {
 
             if ($toolMap.ContainsKey($selected_tool)) {
                 $packageName = $toolMap[$selected_tool]
-                if ($action_choice -eq 1) {
+                if ($action_choice -eq "1") {
                     Install-Tool -tool $packageName
                 } else {
                     Uninstall-Tool -tool $packageName
@@ -120,7 +121,7 @@ function Main-Menu {
         } else {
             Write-Host "Invalid input. Please enter a valid number." -ForegroundColor Red
         }
-    } elseif ($action_choice -eq 3) {
+    } elseif ($action_choice -eq "3") {
         Write-Host "Exiting. Goodbye!" -ForegroundColor Yellow
         exit
     } else {
