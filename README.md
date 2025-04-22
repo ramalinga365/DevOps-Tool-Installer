@@ -2,133 +2,168 @@
 
 ![DevOps Tool Installer](https://imgur.com/QLlNazj.png)  
 
-Easily **install and uninstall essential DevOps tools** on **Linux & Windows** with a single script! Whether you're a **DevOps Engineer, Cloud Enthusiast, or System Administrator**, this script automates the tool setup process, saving time and effort.  
+Easily **install and uninstall essential DevOps tools** on **Linux & Windows** with a single script! Whether you're a **DevOps Engineer, Cloud Enthusiast, or System Administrator**, this toolkit automates setup and cleanup of your environment — saving time and effort.  
 
 ---
 
+![banner](https://imgur.com/5iUO7xf.png)
+
 ## 🔥 Why Use This?  
 
-✅ **One-Click Installation** – Set up all required DevOps tools effortlessly.  
-✅ **Multi-OS Support** – Works on **Ubuntu, Debian, CentOS, Fedora & Windows**.  
-✅ **Auto-Detection** – Automatically detects your OS and applies the correct setup.  
-✅ **Interactive Menu** – Windows version provides an easy-to-use selection menu.  
-✅ **Bulk Install & Uninstall** – Manage multiple tools in one go.  
-✅ **Always Up-to-Date** – Installs the latest versions of all tools.  
+✅ **One-Click Installation & Uninstallation** – Set up or clean up all required DevOps tools effortlessly.  
+✅ **Multi-OS Support** – Works on **Ubuntu, Debian, CentOS, Fedora, Arch, Alpine & Windows**.  
+✅ **Auto-Detection** – Automatically detects your OS and applies the correct package manager.  
+✅ **Interactive Checklist UI** – Select tools with `whiptail` (Linux) or menus (PowerShell).  
+✅ **Advanced Cleanup** – Stops services, removes configs, logs, and binaries cleanly.  
+✅ **Dry Run Mode** – Simulate uninstallation before applying changes.  
+✅ **Timestamped Logs** – Every operation is logged for traceability.  
+✅ **Universal Launchers** – Use a single `devops.ps1` / `devops.sh` to install or uninstall tools.  
 
 ---
 
 ## 📌 Supported DevOps Tools  
 
-This installer includes a **wide range of must-have DevOps tools**, including:  
+### 🔹 Containerization & Orchestration  
 
-🔹 **Containerization & Orchestration**  
-✔️ Docker 🐳  
-✔️ Kubernetes (kubectl) ☸️  
-✔️ Helm ⛵  
-✔️ Minikube ☸️  
-✔️ Istio 📦  
-✔️ OpenShift CLI ☸️  
+✔️ Docker 🐳 | ✔️ Kubernetes (kubectl) ☸️ | ✔️ Helm ⛵ | ✔️ Minikube | ✔️ Istio | ✔️ OpenShift CLI  
 
-🔹 **Infrastructure as Code & Automation**  
-✔️ Ansible 📜  
-✔️ Terraform 🌍  
-✔️ Packer 📦  
-✔️ Vagrant 📦  
+### 🔹 Infrastructure as Code & Automation  
 
-🔹 **CI/CD & Monitoring**  
-✔️ Jenkins 🏗️  
-✔️ GitLab Runner 🏃‍♂️  
-✔️ Prometheus 📈  
-✔️ Grafana 📊  
+✔️ Ansible | ✔️ Terraform | ✔️ Packer | ✔️ Vagrant  
 
-🔹 **Cloud & Security**  
-✔️ AWS CLI ☁️  
-✔️ Azure CLI ☁️  
-✔️ Google Cloud SDK ☁️  
-✔️ HashiCorp Vault 🔐  
-✔️ HashiCorp Consul 🌐  
+### 🔹 CI/CD & Monitoring  
+
+✔️ Jenkins | ✔️ GitLab Runner | ✔️ Prometheus | ✔️ Grafana  
+
+### 🔹 Cloud & Security  
+
+✔️ AWS CLI | ✔️ Azure CLI | ✔️ Google Cloud SDK | ✔️ Vault | ✔️ Consul  
 
 ---
 
 ## 🛠️ Installation Guide  
 
-There are **two ways** to install and use this tool:  
+### 🚀 Method 1: One-Liner (Quick Install)  
 
-### 🚀 **Method 1: Quick Install (Without Cloning)**  
+#### 📌 Windows (PowerShell):  
 
-#### 📌 **For Windows (PowerShell):**  
-Run the following command in **PowerShell**:  
 ```powershell
-Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/install_devops_tools.ps1')
-```  
+iwr -useb https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/devops.ps1 | iex
+```
 
-#### 📌 **For Linux (Bash):**  
-Run the following command in **Terminal**:  
+#### 📌 Linux (Bash):  
+
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/install_devops_tools.sh)
-```  
+curl -s https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/devops.sh | bash
+```
+
+🆕 These **combined launchers** (`devops.ps1` and `devops.sh`) automatically guide you to install or uninstall tools via an interactive prompt!
 
 ---
 
-### 🖥️ **Method 2: Install via Cloning the Repository**  
+### 🖥️ Method 2: Clone the Repository  
 
-#### 📌 **For Linux Users:**  
-1️⃣ Clone the repository:  
+#### 📌 Linux  
+
 ```bash
 git clone https://github.com/NotHarshhaa/DevOps-Tool-Installer.git  
 cd DevOps-Tool-Installer  
-```  
-2️⃣ Make the script executable:  
-```bash
-chmod +x install_devops_tools.sh  
-```  
-3️⃣ Run the script:  
-```bash
-./install_devops_tools.sh  
-```  
+chmod +x devops.sh  
+./devops.sh
+```
 
-#### 📌 **For Windows Users:**  
-1️⃣ Clone the repository:  
+#### 📌 Windows  
+
 ```powershell
 git clone https://github.com/NotHarshhaa/DevOps-Tool-Installer.git  
 cd DevOps-Tool-Installer  
-```  
-2️⃣ Run the script:  
+.\devops.ps1  
+```
+
+---
+
+## ❌ Uninstallation Guide  
+
+🧹 This tool supports **clean uninstallation** with:  
+
+- ✅ Interactive selection  
+- ✅ Advanced cleanup (configs, services, logs)  
+- ✅ Dry run mode for previewing changes  
+- ✅ Timestamped logs saved in the `logs/` folder  
+
+### 🔧 Linux & macOS  
+
+Use the universal launcher:  
+
+```bash
+curl -s https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/devops.sh | bash
+```
+
+---
+
+### 🔧 Windows  
+
+Use PowerShell launcher:  
+
 ```powershell
-.\install_devops_tools.ps1  
-```  
+iwr -useb https://raw.githubusercontent.com/NotHarshhaa/DevOps-Tool-Installer/master/devops.ps1 | iex
+```
+
+---
+
+🧭 **After running the launcher**, you'll be prompted to:  
+
+- Select **Install Tools** or **Uninstall Tools**  
+- Choose the tools from an interactive checklist  
+- Run the selected operation with full logging
+
+---
+
+## 📋 What’s New  
+
+- ✅ **`devops.sh` / `devops.ps1` launchers** – A single entrypoint for install/uninstall  
+- ✅ **Uninstaller script (`uninstall_devops_tools.sh`)** with advanced logic  
+- ✅ **Dry run mode** with `--dry-run` flag  
+- ✅ **Interactive CLI/GUI checklist for tools**  
+- ✅ **Logs saved to `logs/uninstall_YYYYMMDD_HHMMSS/`**  
+- ✅ **Grouped tool categories for easier selection**  
 
 ---
 
 ## 📝 How It Works  
 
-1️⃣ **Run the script** (either via Quick Install or Cloning method).  
-2️⃣ **Follow the on-screen prompts** to select tools for installation or uninstallation.  
-3️⃣ **The script will automatically install/uninstall** based on your OS.  
+1️⃣ Run the script (via quick method or cloned repo)  
+2️⃣ Choose **Install** or **Uninstall**  
+3️⃣ Select tools interactively  
+4️⃣ Script detects your OS and uses the appropriate package manager  
 
-### 🔹 **Installation Process by OS**  
-- **Ubuntu/Debian** → Uses `apt` package manager  
-- **CentOS/RHEL** → Uses `yum` package manager  
-- **Fedora** → Uses `dnf` package manager  
-- **Windows** → Uses `Chocolatey` package manager  
+### OS-Specific Package Managers  
+
+| OS        | Package Manager |
+|-----------|------------------|
+| Ubuntu/Debian | `apt`        |
+| CentOS/RHEL   | `yum`        |
+| Fedora        | `dnf`        |
+| Arch Linux    | `pacman`     |
+| Alpine        | `apk`        |
+| SUSE          | `zypper`     |
+| Windows       | `choco`      |
 
 ---
 
 ## 🤝 Contribution  
 
-🚀 Want to improve this script? Contributions are **welcome!**  
+Contributions are welcome!  
 
-🔹 **Report Issues** – Found a bug? Open an issue!  
-🔹 **Suggest Features** – Have ideas? Let’s make this better together!  
-🔹 **Submit PRs** – Fix bugs or enhance features by submitting a Pull Request.  
+- 🐞 Report bugs by opening issues  
+- ✨ Suggest new tools or features  
+- 🔧 Submit PRs to improve install/uninstall logic  
 
 ---
 
 ## 🔗 Join the Community  
 
-🔥 **Stay connected & collaborate with DevOps professionals!**  
-
-📢 **Telegram:** [Join our community](https://t.me/prodevopsguy)  
+💬 **Telegram:** [Join our group](https://t.me/prodevopsguy)  
 ⭐ **GitHub:** [Follow me](https://github.com/NotHarshhaa)  
 📖 **Blog:** [ProDevOpsGuy](https://blog.prodevopsguy.xyz)  
 💼 **LinkedIn:** [Harshhaa Vardhan Reddy](https://www.linkedin.com/in/harshhaa-vardhan-reddy/)  
@@ -137,6 +172,6 @@ cd DevOps-Tool-Installer
 
 ## ⭐ Show Your Support  
 
-🚀 **If this project helps you, please give it a STAR on GitHub!** ⭐  
+If this project saved you time, consider giving it a ⭐ on GitHub!  
 
 ![Follow Me](https://imgur.com/2j7GSPs.png)  

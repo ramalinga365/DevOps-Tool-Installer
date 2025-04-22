@@ -1,0 +1,12 @@
+# Ensure all shell scripts use LF (Unix) line endings
+*.sh text eol=lf
+
+# PowerShell scripts use CRLF
+*.ps1 text eol=crlf
+
+# Optional: normalize common text files
+*.md text
+*.json text
+*.yml text
+*.yaml text
+*.txt text
