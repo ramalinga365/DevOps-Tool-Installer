@@ -222,68 +222,6 @@ export default function ToolPage() {
                 <ArrowLeftIcon className="h-4 w-4" />
                 <span>Back to Tools</span>
               </Link>
-
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex md:items-center md:space-x-4">
-                <Link href="/tools" className="text-sm font-medium text-muted-foreground hover:text-primary">
-                  Tools
-                </Link>
-                <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary">
-                  About
-                </Link>
-                <Link href="/contribute" className="text-sm font-medium text-muted-foreground hover:text-primary">
-                  Contribute
-                </Link>
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="flex md:hidden">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-foreground focus:outline-none"
-              >
-                <span className="sr-only">Open main menu</span>
-                {isMobileMenuOpen ? (
-                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                ) : (
-                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                )}
-              </button>
-            </div>
-
-            {/* Right side items */}
-            <div className="hidden md:flex md:items-center md:space-x-2">
-              <Link
-                href="/contribute"
-                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
-              >
-                Contribute
-              </Link>
-            </div>
-          </div>
-
-          {/* Mobile menu panel */}
-          <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              <Link
-                href="/tools"
-                className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
-              >
-                Tools
-              </Link>
-              <Link
-                href="/about"
-                className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
-              >
-                About
-              </Link>
-              <Link
-                href="/contribute"
-                className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
-              >
-                Contribute
-              </Link>
             </div>
           </div>
         </div>
@@ -296,8 +234,12 @@ export default function ToolPage() {
             <div className="sticky top-20">
               {/* Tool Header */}
               <div className="flex items-center gap-3 mb-4 p-4 bg-card rounded-lg border border-border/40">
-                {tool.icon && <tool.icon className="w-8 h-8 text-primary" />}
-                <h2 className="font-semibold">{tool.name}</h2>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center">
+                    {tool.icon && <tool.icon className="w-8 h-8 text-primary" />}
+                  </div>
+                  <h2 className="text-xl font-semibold leading-none">{tool.name}</h2>
+                </div>
               </div>
               
               {/* Navigation */}

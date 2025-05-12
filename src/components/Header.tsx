@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaGithub } from 'react-icons/fa';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ThemeToggle } from './ThemeToggle';
@@ -53,9 +54,21 @@ export function Header() {
           <div className="flex items-center space-x-8">
             <Link 
               href="/" 
-              className="text-xl font-semibold hover:text-foreground/80 transition-colors md:text-lg lg:text-xl"
+              className="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
             >
-              DevOps Tools Installations
+              <div className="w-10 h-10 sm:w-8 sm:h-8 flex-shrink-0">
+                <Image
+                  src="/images/logo.png"
+                  alt="DevOps Tools Installation Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full"
+                  priority
+                />
+              </div>
+              <span className="text-base font-semibold sm:text-lg lg:text-xl">
+                DevOps Tools Installations
+              </span>
             </Link>
             <nav className="hidden md:flex space-x-6">
               {menuItems.map((item) => (
@@ -71,7 +84,7 @@ export function Header() {
           </div>
 
           {/* Theme Toggle, GitHub Link, and Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <ThemeToggle />
             <Link
               href="https://github.com/NotHarshhaa"
@@ -79,7 +92,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <FaGithub className="w-6 h-6" />
+              <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="sr-only">GitHub Repository</span>
             </Link>
             <button
