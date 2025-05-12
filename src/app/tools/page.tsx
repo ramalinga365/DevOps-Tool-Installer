@@ -98,6 +98,55 @@ const tools: Tool[] = [
     description: 'Analytics and interactive visualization platform',
     category: 'Monitoring',
     icon: SiGrafana
+  },
+  {
+    id: 'gitlab-runner',
+    name: 'GitLab Runner',
+    description: 'CI/CD execution agent for GitLab pipelines',
+    category: 'CI/CD',
+    icon: SiGitlab
+  },
+  {
+    id: 'vault',
+    name: 'HashiCorp Vault',
+    description: 'Secrets management and data protection platform',
+    category: 'Security',
+    icon: SiVault
+  },
+  {
+    id: 'consul',
+    name: 'HashiCorp Consul',
+    description: 'Service discovery and configuration management tool',
+    category: 'Infrastructure',
+    icon: SiConsul
+  },
+  {
+    id: 'minikube',
+    name: 'Minikube',
+    description: 'Tool for running Kubernetes locally',
+    category: 'Containers',
+    icon: SiKubernetes
+  },
+  {
+    id: 'istio',
+    name: 'Istio',
+    description: 'Service mesh for Kubernetes and microservices',
+    category: 'Containers',
+    icon: SiIstio
+  },
+  {
+    id: 'openshift-cli',
+    name: 'OpenShift CLI',
+    description: 'Command-line interface for Red Hat OpenShift',
+    category: 'Containers',
+    icon: SiRedhatopenshift
+  },
+  {
+    id: 'packer',
+    name: 'Packer',
+    description: 'Tool for creating identical machine images',
+    category: 'Infrastructure',
+    icon: SiPacker
   }
 ];
 
