@@ -8,8 +8,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'DevOps Tool Installer',
-  description: 'Easy installation guides for essential DevOps tools',
+  title: 'Installation Setup/Guides | DevOps Tools', 
+  description: 'Easy installation guides and setup instructions for essential DevOps tools',
 };
 
 export default function RootLayout({
