@@ -1,20 +1,46 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import { cn } from "@/lib/utils";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
-      className
-    )}
-    {...props}
-  />
-))
-Card.displayName = "Card"
+const fadeInUpVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+interface CardProps extends Omit<HTMLMotionProps<"div">, "ref"> {
+  gradient?: boolean;
+  hover?: boolean;
+}
+
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, gradient, hover, children, ...props }, ref) => (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate="visible"
+      variants={fadeInUpVariant}
+      whileHover={hover ? { scale: 1.02, y: -5 } : undefined}
+      whileTap={hover ? { scale: 0.98 } : undefined}
+      transition={{ duration: 0.2 }}
+      className={cn(
+        "rounded-xl border bg-card text-card-foreground",
+        "relative overflow-hidden transition-all duration-200",
+        hover && "hover:shadow-lg hover:shadow-primary/5",
+        gradient && [
+          "before:absolute before:inset-0",
+          "before:bg-gradient-to-r before:from-primary/5 before:to-primary/10",
+          "before:opacity-0 hover:before:opacity-100",
+          "before:transition-opacity before:duration-500",
+        ],
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  ),
+);
+Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<
   HTMLDivElement,
@@ -25,51 +51,79 @@ const CardHeader = React.forwardRef<
     className={cn("flex flex-col space-y-1.5 p-6", className)}
     {...props}
   />
-))
-CardHeader.displayName = "CardHeader"
+));
+CardHeader.displayName = "CardHeader";
 
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
+  HTMLHeadingElement,
+  Omit<HTMLMotionProps<"h3">, "ref">
 >(({ className, ...props }, ref) => (
-  <h3
+  <motion.h3
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight", className)}
+    variants={fadeInUpVariant}
+    transition={{ duration: 0.2, delay: 0.2 }}
+    className={cn(
+      "text-lg font-semibold leading-none tracking-tight",
+      "bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80",
+      className,
+    )}
     {...props}
   />
-))
-CardTitle.displayName = "CardTitle"
+));
+CardTitle.displayName = "CardTitle";
 
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+  Omit<HTMLMotionProps<"p">, "ref">
 >(({ className, ...props }, ref) => (
-  <p
+  <motion.p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    variants={fadeInUpVariant}
+    transition={{ duration: 0.2, delay: 0.3 }}
+    className={cn("text-sm text-muted-foreground leading-relaxed", className)}
     {...props}
   />
-))
-CardDescription.displayName = "CardDescription"
+));
+CardDescription.displayName = "CardDescription";
 
 const CardContent = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  Omit<HTMLMotionProps<"div">, "ref">
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
-))
-CardContent.displayName = "CardContent"
+  <motion.div
+    ref={ref}
+    variants={fadeInUpVariant}
+    transition={{ duration: 0.2, delay: 0.4 }}
+    className={cn("p-6 pt-0", className)}
+    {...props}
+  />
+));
+CardContent.displayName = "CardContent";
 
 const CardFooter = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  Omit<HTMLMotionProps<"div">, "ref">
 >(({ className, ...props }, ref) => (
-  <div
+  <motion.div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    variants={fadeInUpVariant}
+    transition={{ duration: 0.2, delay: 0.5 }}
+    className={cn(
+      "flex items-center p-6 pt-0",
+      "border-t border-border/40 mt-6",
+      className,
+    )}
     {...props}
   />
-))
-CardFooter.displayName = "CardFooter"
+));
+CardFooter.displayName = "CardFooter";
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } 
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  type CardProps,
+};
