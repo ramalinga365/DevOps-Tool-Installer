@@ -172,7 +172,7 @@ export default function AboutPage() {
           >
             <WavingHand />
             <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Hi, I'm Harshhaa
+              Hi, I'm RAM
             </h1>
           </motion.div>
 
