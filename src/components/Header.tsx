@@ -111,7 +111,7 @@ export function Header() {
             <ThemeToggle />
 
             <Link
-              href="https://github.com/NotHarshhaa"
+              href="https://github.com/ramalinga365"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
