@@ -163,7 +163,7 @@ export default function ContributePage() {
                 <h3 className="text-xl font-semibold mb-3">1. Fork & Clone</h3>
                 <div className="bg-muted/50 p-4 rounded-lg font-mono text-sm">
                   git clone
-                  https://github.com/NotHarshhaa/DevOps-Tool-Installer.git
+                  https://github.com/ramalinga365
                 </div>
               </div>
 
@@ -231,7 +231,7 @@ export default function ContributePage() {
           <h2 className="text-3xl font-bold mb-8">Ready to Make an Impact?</h2>
           <div className="flex justify-center gap-4">
             <motion.a
-              href="https://github.com/NotHarshhaa/DevOps-Tool-Installer"
+              href="https://github.com/ramalinga365"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors"
