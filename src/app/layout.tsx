@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'DevOps Tools Installation Setup/Guides',
     description: 'Easy installation guides and setup instructions for essential DevOps tools',
-    url: 'https://devops-tools-installer.vercel.app',
+    url: 'https://devopstools.ramalinga.xyz',
     siteName: 'DevOps Tools Installation',
     images: [
       {
