@@ -19,10 +19,10 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://github.com/NotHarshhaa", icon: FaGithub, label: "GitHub" },
-  { href: "https://t.me/prodevopsguy", icon: FaTelegram, label: "Telegram" },
+  { href: "https://github.com/ramalinga365", icon: FaGithub, label: "GitHub" },
+  { href: " ", icon: FaTelegram, label: "Telegram" },
   {
-    href: "https://linkedin.com/in/harshhaa-vardhan-reddy",
+    href: "https://linkedin.com/in/ramalinga365",
     icon: FaLinkedin,
     label: "LinkedIn",
   },
@@ -181,7 +181,7 @@ export default function Footer() {
                 >
                   <FaHeart className="w-4 h-4 text-red-500" />
                 </motion.div>
-                <span>by NotHarshhaa</span>
+                <span>by RAM</span>
               </span>
             </div>
             <div className="flex items-center gap-6">
